@@ -157,6 +157,19 @@ bettingItems5.addEventListener("click", () => {
   }
 });
 
+let bettingItems6ClickCount = 0;
+bettingItems6.addEventListener("click", () => {
+  if (activeAmounBox) {
+    bettingItems6ClickCount += 1;
+    const amount = bettingAmountCal(bettingItems6ClickCount);
+    spenBettingAmount6.textContent = `${amount} coin`;
+    bettingAmountList[5].amount = amount;
+    calTotalSpendingAmount();
+  } else {
+    alert("please selec an betting amount");
+  }
+});
+
 const bettingAmountCal = (count) => {
   if (activeAmounBox == "bettingAmountBox1") {
     const amount = bettingAmount1 * count;
