@@ -279,13 +279,16 @@ const startGameCountDown = () => {
 let suffleingSecond = 5;
 let winningCoinAmount = 0;
 const startSuffleSecond = () => {
-  suffleItems();
+  let randomIndex = Math.floor(Math.random() * 8 + 1);
+
+  suffleItems(randomIndex);
   const suffleing = setInterval(() => {
     suffleingSecond = suffleingSecond - 1;
     if (suffleingSecond < 0) {
       clearInterval(suffleing);
       Swal.fire({
         icon: "success",
+        title: `The winner is ${iconsArray[randomIndex - 1]}`,
         text: `You earned ${winningCoinAmount} coin`,
       }).then((result) => {
         restartProcess();
@@ -296,18 +299,18 @@ const startSuffleSecond = () => {
   }, 1000);
 };
 
-const suffleItems = (index) => {
+const suffleItems = (randomIndex) => {
   isSuffleStart = false;
   let activeCount = 0;
-  let randomItem = Math.floor(Math.random() * 8 + 1);
+  // let randomItem = Math.floor(Math.random() * 8 + 1);
   const suffleing = setInterval(() => {
     activeCount += 1;
     if (suffleingSecond == 0) {
       clearInterval(suffleing);
-      calculateWinCoin(bettingAmountList[randomItem - 1]);
+      calculateWinCoin(bettingAmountList[randomIndex - 1]);
       handleOverlay("block");
-      const overlayActive = document.getElementById(`overlay${randomItem}`);
-      handleResultArray(randomItem - 1, 0);
+      const overlayActive = document.getElementById(`overlay${randomIndex}`);
+      handleResultArray(randomIndex - 1, 0);
       overlayActive.style.display = "none";
     } else {
       handleOverlay("block");
