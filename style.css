@@ -1,0 +1,252 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  background-color: #f0ff42;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.container {
+  width: 300px;
+}
+
+.container .up-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.up-container .lines-cirlce-box {
+  position: absolute;
+  top: -160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+  width: 220px;
+  z-index: 1;
+  /* background-color: rebeccapurple; */
+}
+
+.lines-cirlce-box .middle-circle {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  background-color: #cf0a0a;
+  z-index: 1;
+}
+.lines-cirlce-box .lines {
+  position: absolute;
+}
+
+.box-top {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid red;
+  z-index: 1;
+  top: -80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.box-right {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid red;
+  z-index: 1;
+  right: -60px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  font-size: 14px;
+  padding-top: 10px;
+}
+.box-right-top {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid red;
+  z-index: 1;
+  right: -40px;
+  top: -50px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  font-size: 14px;
+  padding-top: 10px;
+}
+.box-right-bottom {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid red;
+  z-index: 1;
+  right: -30px;
+  bottom: -40px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.box-left {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid red;
+  z-index: 1;
+  left: -60px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  font-size: 14px;
+  padding-top: 10px;
+}
+.box-left-top {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid red;
+  z-index: 1;
+  left: -40px;
+  top: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 10px;
+}
+.box-left-bottom {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid red;
+  z-index: 1;
+  left: -30px;
+  bottom: -40px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  font-size: 14px;
+  padding-top: 10px;
+}
+.box-bottom {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid red;
+  z-index: 1;
+  bottom: -80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.piller-wrapper {
+  position: relative;
+}
+
+.betting-amount-wrapper {
+  height: 90px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.amount-box {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f0ff42;
+  cursor: pointer;
+}
+
+.amount-box-active {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #bfcc2f;
+  cursor: pointer;
+}
+
+.icon-betting-amount {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  font-size: 11px;
+}
+
+.betting-multiply-amount {
+  font-size: 12px;
+}
+
+.scores-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: #cf0a0a;
+  padding: 10px;
+}
+
+.total-coin,
+.winning-coin {
+  background-color: #f0ff42;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 49%;
+  text-align: center;
+}
