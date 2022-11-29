@@ -293,6 +293,7 @@ const startSuffleSecond = () => {
         text: `You earned ${winningCoinAmount} coin`,
       }).then((result) => {
         restartProcess();
+        handleCursorMovement();
       });
     } else {
       startSuffleSecondSpan.textContent = `${suffleingSecond}s`;
@@ -414,4 +415,31 @@ function handleResultArray(old_index, new_index) {
   iconsArray = ["🍅", "🥕", "🍉", "🍍", "🥭", "🍒", "🌽", "🥥"];
 }
 
+const handleCursorMovement = () => {
+  let element = 0;
+  const cursorInterval = setInterval(() => {
+    if (willStartSuffleingSeconds > 0) {
+      element += 1;
+      if (element > 8) {
+        element = 0;
+      } else {
+        document.querySelectorAll(".cursor").forEach((elem) => {
+          elem.style.display = "none";
+        });
+        document.querySelectorAll(".icon").forEach((elem) => {
+          elem.style.fontSize = "16px";
+        });
+        document.getElementById(`cursor${element}`).style.display = "block";
+        document.getElementById(`icon${element}`).style.fontSize = "21px";
+      }
+    } else {
+      document.querySelectorAll(".cursor").forEach((elem) => {
+        elem.style.display = "none";
+      });
+      clearInterval(cursorInterval);
+    }
+  }, 2000);
+};
+
 startGameCountDown();
+handleCursorMovement();
