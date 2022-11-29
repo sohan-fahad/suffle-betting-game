@@ -426,16 +426,34 @@ const handleCursorMovement = () => {
         document.querySelectorAll(".cursor").forEach((elem) => {
           elem.style.display = "none";
         });
+
         document.querySelectorAll(".icon").forEach((elem) => {
           elem.style.fontSize = "16px";
         });
+
+        document.querySelectorAll(".betting-item-box").forEach((elem) => {
+          elem.classList.remove("hover-box");
+        });
+
         document.getElementById(`cursor${element}`).style.display = "block";
-        document.getElementById(`icon${element}`).style.fontSize = "21px";
+        document.getElementById(`icon${element}`).style.fontSize = "20px";
+        document
+          .getElementById(`betting-items-${element}`)
+          .classList.add("hover-box");
       }
     } else {
       document.querySelectorAll(".cursor").forEach((elem) => {
         elem.style.display = "none";
       });
+
+      document.querySelectorAll(".icon").forEach((elem) => {
+        elem.style.fontSize = "16px";
+      });
+
+      document.querySelectorAll(".betting-item-box").forEach((elem) => {
+        elem.classList.remove("hover-box");
+      });
+
       clearInterval(cursorInterval);
     }
   }, 2000);
