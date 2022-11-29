@@ -76,7 +76,7 @@ let winCoinEmelement = document.getElementById("winCoinEmelement");
 
 let resultsContainer = document.getElementById("resultsContainer");
 
-const iconsArray = ["🍅", "🥕", "🍉", "🍍", "🥭", "🍒", "🌽", "🥥"];
+let iconsArray = ["🍅", "🥕", "🍉", "🍍", "🥭", "🍒", "🌽", "🥥"];
 
 let resultIconElemenst = iconsArray.map((element) => {
   return `<p>${element}</p>`;
@@ -296,7 +296,7 @@ const startSuffleSecond = () => {
   }, 1000);
 };
 
-const suffleItems = () => {
+const suffleItems = (index) => {
   isSuffleStart = false;
   let activeCount = 0;
   let randomItem = Math.floor(Math.random() * 8 + 1);
@@ -306,8 +306,8 @@ const suffleItems = () => {
       clearInterval(suffleing);
       calculateWinCoin(bettingAmountList[randomItem - 1]);
       handleOverlay("block");
-      handleResultArray(randomItem - 1, 0);
       const overlayActive = document.getElementById(`overlay${randomItem}`);
+      handleResultArray(randomItem - 1, 0);
       overlayActive.style.display = "none";
     } else {
       handleOverlay("block");
@@ -415,8 +415,8 @@ function handleResultArray(old_index, new_index) {
   let resultIconElemenst = iconsArray.map((element) => {
     return `<p>${element}</p>`;
   });
-
   resultsContainer.innerHTML = resultIconElemenst.join("\n");
+  iconsArray = ["🍅", "🥕", "🍉", "🍍", "🥭", "🍒", "🌽", "🥥"];
 }
 
 startGameCountDown();
