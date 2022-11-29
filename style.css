@@ -43,7 +43,32 @@ body {
   border-radius: 50%;
   background-color: #cf0a0a;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
 }
+.lines-cirlce-box .middle-circle p {
+  font-size: 14px;
+}
+.lines-cirlce-box .middle-circle span {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.middle-circle .start-suffle-second-element {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: black;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
 .lines-cirlce-box .lines {
   position: absolute;
 }
@@ -180,6 +205,17 @@ body {
   flex-direction: column;
   font-size: 14px;
   padding-top: 10px;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(26, 25, 25, 0.389);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  display: none;
 }
 
 .piller-wrapper {

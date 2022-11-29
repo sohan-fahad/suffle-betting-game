@@ -1,6 +1,7 @@
 let totalCoin = 1000000;
 let leftTotalAmount = 0;
 let winingCoin = 0;
+let isSuffleStart = true;
 
 let bettingAmount1 = 0;
 let bettingAmount2 = 0;
@@ -64,6 +65,12 @@ let spenBettingAmount6 = document.getElementById("spenBettingAmount6");
 let spenBettingAmount7 = document.getElementById("spenBettingAmount7");
 let spenBettingAmount8 = document.getElementById("spenBettingAmount8");
 
+let suffleSecondsElement = document.getElementById("suffleSecondsElement");
+let startSuffleSecondSpan = document.getElementById("startSuffleSecondSpan");
+let startSuffleSecondElementBox = document.getElementById(
+  "startSuffleSecondElementBox"
+);
+
 let totalCoinBox = document.getElementById("total-coin-box");
 
 totalCoinBox.textContent = `available coin ${totalCoin}`;
@@ -94,7 +101,7 @@ bettingAmountBox3.addEventListener("click", () => {
 
 let bettingItems1ClickCount = 0;
 bettingItems1.addEventListener("click", () => {
-  if (activeAmounBox) {
+  if (activeAmounBox && isSuffleStart) {
     bettingItems1ClickCount += 1;
     const amount = bettingAmountCal(bettingItems1ClickCount);
     spenBettingAmount1.textContent = `${amount} coin`;
@@ -107,7 +114,7 @@ bettingItems1.addEventListener("click", () => {
 
 let bettingItems2ClickCount = 0;
 bettingItems2.addEventListener("click", () => {
-  if (activeAmounBox) {
+  if (activeAmounBox && isSuffleStart) {
     bettingItems2ClickCount += 1;
     const amount = bettingAmountCal(bettingItems2ClickCount);
     spenBettingAmount2.textContent = `${amount} coin`;
@@ -120,7 +127,7 @@ bettingItems2.addEventListener("click", () => {
 
 let bettingItems3ClickCount = 0;
 bettingItems3.addEventListener("click", () => {
-  if (activeAmounBox) {
+  if (activeAmounBox && isSuffleStart) {
     bettingItems3ClickCount += 1;
     const amount = bettingAmountCal(bettingItems3ClickCount);
     spenBettingAmount3.textContent = `${amount} coin`;
@@ -133,7 +140,7 @@ bettingItems3.addEventListener("click", () => {
 
 let bettingItems4ClickCount = 0;
 bettingItems4.addEventListener("click", () => {
-  if (activeAmounBox) {
+  if (activeAmounBox && isSuffleStart) {
     bettingItems4ClickCount += 1;
     const amount = bettingAmountCal(bettingItems4ClickCount);
     spenBettingAmount4.textContent = `${amount} coin`;
@@ -146,7 +153,7 @@ bettingItems4.addEventListener("click", () => {
 
 let bettingItems5ClickCount = 0;
 bettingItems5.addEventListener("click", () => {
-  if (activeAmounBox) {
+  if (activeAmounBox && isSuffleStart) {
     bettingItems5ClickCount += 1;
     const amount = bettingAmountCal(bettingItems5ClickCount);
     spenBettingAmount5.textContent = `${amount} coin`;
@@ -159,11 +166,37 @@ bettingItems5.addEventListener("click", () => {
 
 let bettingItems6ClickCount = 0;
 bettingItems6.addEventListener("click", () => {
-  if (activeAmounBox) {
+  if (activeAmounBox && isSuffleStart) {
     bettingItems6ClickCount += 1;
     const amount = bettingAmountCal(bettingItems6ClickCount);
     spenBettingAmount6.textContent = `${amount} coin`;
     bettingAmountList[5].amount = amount;
+    calTotalSpendingAmount();
+  } else {
+    alert("please selec an betting amount");
+  }
+});
+
+let bettingItems7ClickCount = 0;
+bettingItems7.addEventListener("click", () => {
+  if (activeAmounBox && isSuffleStart) {
+    bettingItems7ClickCount += 1;
+    const amount = bettingAmountCal(bettingItems7ClickCount);
+    spenBettingAmount7.textContent = `${amount} coin`;
+    bettingAmountList[6].amount = amount;
+    calTotalSpendingAmount();
+  } else {
+    alert("please selec an betting amount");
+  }
+});
+
+let bettingItems8ClickCount = 0;
+bettingItems8.addEventListener("click", () => {
+  if (activeAmounBox && isSuffleStart) {
+    bettingItems8ClickCount += 1;
+    const amount = bettingAmountCal(bettingItems8ClickCount);
+    spenBettingAmount8.textContent = `${amount} coin`;
+    bettingAmountList[7].amount = amount;
     calTotalSpendingAmount();
   } else {
     alert("please selec an betting amount");
@@ -190,3 +223,76 @@ const calTotalSpendingAmount = () => {
   });
   totalCoinBox.textContent = `available coin ${totalCoin - spendTotalCoin}`;
 };
+
+let willStartSuffleingSeconds = 5;
+
+const startGameCountDown = () => {
+  startSuffleSecondElementBox.style.display = "none";
+  const startSecondCountDown = setInterval(() => {
+    willStartSuffleingSeconds = willStartSuffleingSeconds - 1;
+    if (willStartSuffleingSeconds == 0) {
+      startSuffleSecondElementBox.style.display = "flex";
+      clearInterval(startSecondCountDown);
+      startSuffleSecond();
+    } else {
+      suffleSecondsElement.textContent = `${willStartSuffleingSeconds}s`;
+    }
+  }, 1000);
+};
+
+let suffleingSecond = 5;
+let winningCoinAmount = 0;
+const startSuffleSecond = () => {
+  suffleItems();
+  const suffleing = setInterval(() => {
+    suffleingSecond = suffleingSecond - 1;
+    if (suffleingSecond < 0) {
+      clearInterval(suffleing);
+      Swal.fire({
+        icon: "success",
+        text: `You earned ${winningCoinAmount} coin`,
+        confirmButtonText: "OK",
+      });
+    } else {
+      startSuffleSecondSpan.textContent = `${suffleingSecond}s`;
+    }
+  }, 1000);
+};
+
+const suffleItems = () => {
+  let activeCount = 0;
+  let randomItem = Math.floor(Math.random() * 8 + 1);
+  console.log(bettingAmountList[randomItem - 1]);
+  const suffleing = setInterval(() => {
+    activeCount += 1;
+    if (suffleingSecond == 0) {
+      clearInterval(suffleing);
+      calculateWinCoin(bettingAmountList[randomItem - 1]);
+      handleOverlay("block");
+      const overlayActive = document.getElementById(`overlay${randomItem}`);
+      overlayActive.style.display = "none";
+    } else {
+      handleOverlay("block");
+      if (activeCount > 0 && activeCount <= 8) {
+        const overlayActive = document.getElementById(`overlay${activeCount}`);
+        overlayActive.style.display = "none";
+      } else {
+        activeCount = 0;
+      }
+    }
+  }, 200);
+};
+
+const handleOverlay = (value) => {
+  const overlays = document.querySelectorAll(".overlay");
+  overlays.forEach((overlay) => {
+    overlay.style.display = value;
+  });
+};
+
+const calculateWinCoin = (winIndexObje) => {
+  winningCoinAmount = winIndexObje.amount * winIndexObje.counValue;
+  console.log(winningCoinAmount);
+};
+
+startGameCountDown();

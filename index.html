@@ -5,13 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.14/sweetalert2.min.css"
+    />
     <title>Demo Game</title>
   </head>
   <body>
     <div class="container">
       <div class="up-container">
         <div class="lines-cirlce-box">
-          <div class="middle-circle"></div>
+          <div class="middle-circle">
+            <p>Suffle will start</p>
+            <span id="suffleSecondsElement">30s</span>
+            <div
+              class="start-suffle-second-element"
+              id="startSuffleSecondElementBox"
+            >
+              <span id="startSuffleSecondSpan">5s</span>
+            </div>
+          </div>
           <div class="lines">
             <img src="../assets/images/lines.png" alt="" srcset="" />
           </div>
@@ -37,6 +50,8 @@
               <span id="spenBettingAmount1"></span>
             </div>
             <p class="betting-multiply-amount">win 10 times</p>
+
+            <div class="overlay" id="overlay1"></div>
           </div>
           <div class="box-right-top" id="betting-items-2">
             <div class="icon-betting-amount">
@@ -60,6 +75,7 @@
               <span id="spenBettingAmount2"></span>
             </div>
             <p class="betting-multiply-amount">win 15 times</p>
+            <div class="overlay" id="overlay2"></div>
           </div>
           <div class="box-right" id="betting-items-3">
             <div class="icon-betting-amount">
@@ -83,6 +99,7 @@
               <span id="spenBettingAmount3"></span>
             </div>
             <p class="betting-multiply-amount">win 25 times</p>
+            <div class="overlay" id="overlay3"></div>
           </div>
           <div class="box-right-bottom" id="betting-items-4">
             <div class="icon-betting-amount">
@@ -106,6 +123,7 @@
               <span id="spenBettingAmount4"></span>
             </div>
             <p class="betting-multiply-amount">win 45 times</p>
+            <div class="overlay" id="overlay4"></div>
           </div>
           <div class="box-bottom" id="betting-items-5">
             <div class="icon-betting-amount">
@@ -129,6 +147,7 @@
               <span id="spenBettingAmount5"></span>
             </div>
             <p class="betting-multiply-amount">win 5 times</p>
+            <div class="overlay" id="overlay5"></div>
           </div>
           <div class="box-left-bottom" id="betting-items-6">
             <div class="icon-betting-amount">
@@ -152,6 +171,7 @@
               <span id="spenBettingAmount6"></span>
             </div>
             <p class="betting-multiply-amount">win 5 times</p>
+            <div class="overlay" id="overlay6"></div>
           </div>
           <div class="box-left" id="betting-items-7">
             <div class="icon-betting-amount">
@@ -175,6 +195,7 @@
               <span id="spenBettingAmount7"></span>
             </div>
             <p class="betting-multiply-amount">win 5 times</p>
+            <div class="overlay" id="overlay7"></div>
           </div>
           <div class="box-left-top" id="betting-items-8">
             <div class="icon-betting-amount">
@@ -198,6 +219,7 @@
               <span id="spenBettingAmount8"></span>
             </div>
             <p class="betting-multiply-amount">win 5 times</p>
+            <div class="overlay" id="overlay8"></div>
           </div>
         </div>
         <div class="piller-wrapper">
@@ -222,5 +244,6 @@
     </div>
 
     <script src="/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.14/sweetalert2.all.min.js"></script>
   </body>
 </html>
