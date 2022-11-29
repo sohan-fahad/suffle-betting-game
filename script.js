@@ -79,7 +79,7 @@ let resultsContainer = document.getElementById("resultsContainer");
 let iconsArray = ["🍅", "🥕", "🍉", "🍍", "🥭", "🍒", "🌽", "🥥"];
 
 let resultIconElemenst = iconsArray.map((element) => {
-  return `<p>${element}</p>`;
+  return `<p class="result-icon">${element}</p>`;
 });
 
 resultsContainer.innerHTML = resultIconElemenst.join("\n");
@@ -416,7 +416,7 @@ function handleResultArray(old_index, new_index) {
   iconsArray.splice(new_index, 0, iconsArray.splice(old_index, 1)[0]);
 
   let resultIconElemenst = iconsArray.map((element) => {
-    return `<p>${element}</p>`;
+    return `<p class="result-icon">${element}</p>`;
   });
   resultsContainer.innerHTML = resultIconElemenst.join("\n");
   iconsArray = ["🍅", "🥕", "🍉", "🍍", "🥭", "🍒", "🌽", "🥥"];
