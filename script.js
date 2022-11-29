@@ -6,6 +6,7 @@ let isSuffleStart = true;
 let bettingAmount1 = 0;
 let bettingAmount2 = 0;
 let bettingAmount3 = 0;
+let bettingAmount4 = 0;
 
 let activeAmounBox = "";
 let bettingAmountList = [
@@ -46,6 +47,7 @@ let bettingAmountList = [
 let bettingAmountBox1 = document.getElementById("amount-box-1");
 let bettingAmountBox2 = document.getElementById("amount-box-2");
 let bettingAmountBox3 = document.getElementById("amount-box-3");
+let bettingAmountBox4 = document.getElementById("amount-box-4");
 
 let bettingItems1 = document.getElementById("betting-items-1");
 let bettingItems2 = document.getElementById("betting-items-2");
@@ -87,27 +89,39 @@ resultsContainer.innerHTML = resultIconElemenst.join("\n");
 totalCoinBox.textContent = `available coin ${totalCoin}`;
 
 bettingAmountBox1.addEventListener("click", () => {
-  bettingAmount1 = 100;
+  bettingAmount1 = 10;
   activeAmounBox = "bettingAmountBox1";
   bettingAmountBox1.classList.add("amount-box-active");
   bettingAmountBox2.classList.remove("amount-box-active");
   bettingAmountBox3.classList.remove("amount-box-active");
+  bettingAmountBox4.classList.remove("amount-box-active");
 });
 
 bettingAmountBox2.addEventListener("click", () => {
-  bettingAmount2 = 500;
+  bettingAmount2 = 50;
   activeAmounBox = "bettingAmountBox2";
   bettingAmountBox2.classList.add("amount-box-active");
   bettingAmountBox1.classList.remove("amount-box-active");
   bettingAmountBox3.classList.remove("amount-box-active");
+  bettingAmountBox4.classList.remove("amount-box-active");
 });
 
 bettingAmountBox3.addEventListener("click", () => {
-  bettingAmount3 = 1000;
+  bettingAmount3 = 100;
   activeAmounBox = "bettingAmountBox3";
   bettingAmountBox3.classList.add("amount-box-active");
   bettingAmountBox1.classList.remove("amount-box-active");
   bettingAmountBox2.classList.remove("amount-box-active");
+  bettingAmountBox4.classList.remove("amount-box-active");
+});
+
+bettingAmountBox4.addEventListener("click", () => {
+  bettingAmount4 = 1000;
+  activeAmounBox = "bettingAmountBox4";
+  bettingAmountBox4.classList.add("amount-box-active");
+  bettingAmountBox1.classList.remove("amount-box-active");
+  bettingAmountBox2.classList.remove("amount-box-active");
+  bettingAmountBox3.classList.remove("amount-box-active");
 });
 
 bettingItems1.addEventListener("click", () => {
@@ -229,8 +243,11 @@ const bettingAmountCal = (count) => {
   } else if (activeAmounBox == "bettingAmountBox2") {
     const amount = bettingAmount2 + count;
     return amount;
-  } else {
+  } else if (activeAmounBox == "bettingAmountBox3") {
     const amount = bettingAmount3 + count;
+    return amount;
+  } else {
+    const amount = bettingAmount4 + count;
     return amount;
   }
 };
