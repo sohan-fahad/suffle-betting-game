@@ -5,12 +5,18 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 100px;
   padding: 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 .container {
@@ -42,7 +48,6 @@ body {
   height: 220px;
   width: 220px;
   z-index: 1;
-  /* background-color: rebeccapurple; */
 }
 
 .lines-cirlce-box .middle-circle {
@@ -95,7 +100,7 @@ body {
   align-items: center;
   flex-direction: column;
   font-size: 14px;
-  padding-top: 10px;
+  overflow: hidden;
 }
 
 .box-right {
@@ -112,7 +117,7 @@ body {
   align-items: center;
   flex-direction: column;
   font-size: 14px;
-  padding-top: 10px;
+  overflow: hidden;
 }
 .box-right-top {
   position: absolute;
@@ -129,7 +134,7 @@ body {
   align-items: center;
   flex-direction: column;
   font-size: 14px;
-  padding-top: 10px;
+  overflow: hidden;
 }
 .box-right-bottom {
   position: absolute;
@@ -146,7 +151,7 @@ body {
   align-items: center;
   flex-direction: column;
   font-size: 14px;
-  padding-top: 10px;
+  overflow: hidden;
 }
 
 .box-left {
@@ -163,7 +168,7 @@ body {
   align-items: center;
   flex-direction: column;
   font-size: 14px;
-  padding-top: 10px;
+  overflow: hidden;
 }
 .box-left-top {
   position: absolute;
@@ -180,6 +185,7 @@ body {
   align-items: center;
   flex-direction: column;
   font-size: 10px;
+  overflow: hidden;
 }
 .box-left-bottom {
   position: absolute;
@@ -196,7 +202,7 @@ body {
   align-items: center;
   flex-direction: column;
   font-size: 14px;
-  padding-top: 10px;
+  overflow: hidden;
 }
 .box-bottom {
   position: absolute;
@@ -212,7 +218,11 @@ body {
   align-items: center;
   flex-direction: column;
   font-size: 14px;
-  padding-top: 10px;
+  overflow: hidden;
+}
+
+.icon {
+  font-size: 16px;
 }
 
 .overlay {
@@ -273,10 +283,44 @@ body {
   justify-content: start;
   align-items: center;
   font-size: 11px;
+  height: 50%;
+  padding-top: 5px;
 }
 
 .betting-multiply-amount {
   font-size: 12px;
+  height: 50%;
+  background-color: #74b2c8;
+  width: 100%;
+  border-radius: 0 0 50% 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container {
+  width: 100%;
+  background-color: #be0813;
+  padding-top: 10px;
+}
+
+.result-box {
+  height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #cf3a40;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.results {
+  display: grid;
+  width: 90%;
+  grid-template-columns: repeat(8, 1fr);
+  padding-left: 10px;
 }
 
 .scores-wrapper {
@@ -285,7 +329,6 @@ body {
   align-items: center;
   height: 100px;
   width: 100%;
-  background-color: #be0813;
   padding: 10px;
 }
 
@@ -300,4 +343,12 @@ body {
   flex-direction: column;
   width: 49%;
   text-align: center;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    background-color: #e3ce34;
+    width: 100%;
+  }
 }
