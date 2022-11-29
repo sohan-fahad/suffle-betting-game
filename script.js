@@ -110,11 +110,9 @@ bettingAmountBox3.addEventListener("click", () => {
   bettingAmountBox2.classList.remove("amount-box-active");
 });
 
-let bettingItems1ClickCount = 0;
 bettingItems1.addEventListener("click", () => {
   if (activeAmounBox && isSuffleStart) {
-    bettingItems1ClickCount += 1;
-    const amount = bettingAmountCal(bettingItems1ClickCount);
+    const amount = bettingAmountCal(bettingAmountList[0].amount);
     spenBettingAmount1.textContent = `${amount} coin`;
     bettingAmountList[0].amount = amount;
     calTotalSpendingAmount();
@@ -126,11 +124,9 @@ bettingItems1.addEventListener("click", () => {
   }
 });
 
-let bettingItems2ClickCount = 0;
 bettingItems2.addEventListener("click", () => {
   if (activeAmounBox && isSuffleStart) {
-    bettingItems2ClickCount += 1;
-    const amount = bettingAmountCal(bettingItems2ClickCount);
+    const amount = bettingAmountCal(bettingAmountList[1].amount);
     spenBettingAmount2.textContent = `${amount} coin`;
     bettingAmountList[1].amount = amount;
     calTotalSpendingAmount();
@@ -142,11 +138,9 @@ bettingItems2.addEventListener("click", () => {
   }
 });
 
-let bettingItems3ClickCount = 0;
 bettingItems3.addEventListener("click", () => {
   if (activeAmounBox && isSuffleStart) {
-    bettingItems3ClickCount += 1;
-    const amount = bettingAmountCal(bettingItems3ClickCount);
+    const amount = bettingAmountCal(bettingAmountList[2].amount);
     spenBettingAmount3.textContent = `${amount} coin`;
     bettingAmountList[2].amount = amount;
     calTotalSpendingAmount();
@@ -158,11 +152,9 @@ bettingItems3.addEventListener("click", () => {
   }
 });
 
-let bettingItems4ClickCount = 0;
 bettingItems4.addEventListener("click", () => {
   if (activeAmounBox && isSuffleStart) {
-    bettingItems4ClickCount += 1;
-    const amount = bettingAmountCal(bettingItems4ClickCount);
+    const amount = bettingAmountCal(bettingAmountList[3].amount);
     spenBettingAmount4.textContent = `${amount} coin`;
     bettingAmountList[3].amount = amount;
     calTotalSpendingAmount();
@@ -174,11 +166,9 @@ bettingItems4.addEventListener("click", () => {
   }
 });
 
-let bettingItems5ClickCount = 0;
 bettingItems5.addEventListener("click", () => {
   if (activeAmounBox && isSuffleStart) {
-    bettingItems5ClickCount += 1;
-    const amount = bettingAmountCal(bettingItems5ClickCount);
+    const amount = bettingAmountCal(bettingAmountList[4].amount);
     spenBettingAmount5.textContent = `${amount} coin`;
     bettingAmountList[4].amount = amount;
     calTotalSpendingAmount();
@@ -190,11 +180,9 @@ bettingItems5.addEventListener("click", () => {
   }
 });
 
-let bettingItems6ClickCount = 0;
 bettingItems6.addEventListener("click", () => {
   if (activeAmounBox && isSuffleStart) {
-    bettingItems6ClickCount += 1;
-    const amount = bettingAmountCal(bettingItems6ClickCount);
+    const amount = bettingAmountCal(bettingAmountList[5].amount);
     spenBettingAmount6.textContent = `${amount} coin`;
     bettingAmountList[5].amount = amount;
     calTotalSpendingAmount();
@@ -206,11 +194,9 @@ bettingItems6.addEventListener("click", () => {
   }
 });
 
-let bettingItems7ClickCount = 0;
 bettingItems7.addEventListener("click", () => {
   if (activeAmounBox && isSuffleStart) {
-    bettingItems7ClickCount += 1;
-    const amount = bettingAmountCal(bettingItems7ClickCount);
+    const amount = bettingAmountCal(bettingAmountList[6].amount);
     spenBettingAmount7.textContent = `${amount} coin`;
     bettingAmountList[6].amount = amount;
     calTotalSpendingAmount();
@@ -222,11 +208,9 @@ bettingItems7.addEventListener("click", () => {
   }
 });
 
-let bettingItems8ClickCount = 0;
 bettingItems8.addEventListener("click", () => {
   if (activeAmounBox && isSuffleStart) {
-    bettingItems8ClickCount += 1;
-    const amount = bettingAmountCal(bettingItems8ClickCount);
+    const amount = bettingAmountCal(bettingAmountList[[7]].amount);
     spenBettingAmount8.textContent = `${amount} coin`;
     bettingAmountList[7].amount = amount;
     calTotalSpendingAmount();
@@ -240,13 +224,13 @@ bettingItems8.addEventListener("click", () => {
 
 const bettingAmountCal = (count) => {
   if (activeAmounBox == "bettingAmountBox1") {
-    const amount = bettingAmount1 * count;
+    const amount = bettingAmount1 + count;
     return amount;
   } else if (activeAmounBox == "bettingAmountBox2") {
-    const amount = bettingAmount2 * count;
+    const amount = bettingAmount2 + count;
     return amount;
   } else {
-    const amount = bettingAmount3 * count;
+    const amount = bettingAmount3 + count;
     return amount;
   }
 };
@@ -345,15 +329,6 @@ const restartProcess = () => {
 
   startSuffleSecondSpan.textContent = `${suffleingSecond}s`;
   suffleSecondsElement.textContent = `${willStartSuffleingSeconds}s`;
-
-  bettingItems1ClickCount = 0;
-  bettingItems2ClickCount = 0;
-  bettingItems3ClickCount = 0;
-  bettingItems4ClickCount = 0;
-  bettingItems5ClickCount = 0;
-  bettingItems6ClickCount = 0;
-  bettingItems7ClickCount = 0;
-  bettingItems8ClickCount = 0;
 
   bettingAmountList = [
     {

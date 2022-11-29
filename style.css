@@ -102,6 +102,7 @@ body {
   flex-direction: column;
   font-size: 14px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .box-right {
@@ -119,6 +120,7 @@ body {
   flex-direction: column;
   font-size: 14px;
   overflow: hidden;
+  cursor: pointer;
 }
 .box-right-top {
   position: absolute;
@@ -136,6 +138,7 @@ body {
   flex-direction: column;
   font-size: 14px;
   overflow: hidden;
+  cursor: pointer;
 }
 .box-right-bottom {
   position: absolute;
@@ -153,6 +156,7 @@ body {
   flex-direction: column;
   font-size: 14px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .box-left {
@@ -170,6 +174,7 @@ body {
   flex-direction: column;
   font-size: 14px;
   overflow: hidden;
+  cursor: pointer;
 }
 .box-left-top {
   position: absolute;
@@ -187,6 +192,7 @@ body {
   flex-direction: column;
   font-size: 10px;
   overflow: hidden;
+  cursor: pointer;
 }
 .box-left-bottom {
   position: absolute;
@@ -204,6 +210,7 @@ body {
   flex-direction: column;
   font-size: 14px;
   overflow: hidden;
+  cursor: pointer;
 }
 .box-bottom {
   position: absolute;
@@ -220,6 +227,7 @@ body {
   flex-direction: column;
   font-size: 14px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .icon {
