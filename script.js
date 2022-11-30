@@ -274,6 +274,7 @@ const calTotalSpendingAmount = () => {
     spendTotalCoin = spendTotalCoin + element.amount;
   });
   totalCoinBox.textContent = `available coin ${totalCoin - spendTotalCoin}`;
+  document.getElementById("spending-coins-amount").textContent = spendTotalCoin;
 };
 
 let willStartSuffleingSeconds = 30;
@@ -303,14 +304,11 @@ const startSuffleSecond = () => {
     suffleingSecond = suffleingSecond - 1;
     if (suffleingSecond < 0) {
       clearInterval(suffleing);
-      Swal.fire({
-        icon: "success",
-        title: `The winner is ${iconsArray[randomIndex - 1]}`,
-        text: `You earned ${winningCoinAmount} coin`,
-      }).then((result) => {
-        restartProcess();
-        handleCursorMovement();
-      });
+      document.getElementById("winner-icon").textContent =
+        iconsArray[randomIndex - 1];
+      document.getElementById("won-coins-amount").textContent =
+        winningCoinAmount;
+      showModal();
     } else {
       startSuffleSecondSpan.textContent = `${suffleingSecond}s`;
     }
@@ -476,7 +474,7 @@ const handleCursorMovement = () => {
 };
 
 document.addEventListener("click", () => {
-  // openFullscreen();
+  openFullscreen();
 });
 
 const showModal = () => {
@@ -488,9 +486,11 @@ const showModal = () => {
 
 const closeModal = () => {
   isModal = false;
-  document.getElementById("modal-wrapper").style.display = "none";
+  document.getElementById("modal-wrapper").style.height = "0";
   document.getElementById("modal-box").classList.add("modal-box");
   document.getElementById("modal-box").classList.remove("modal-box-active");
+  restartProcess();
+  handleCursorMovement();
 };
 
 startGameCountDown();
