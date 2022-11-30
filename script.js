@@ -397,6 +397,8 @@ const restartProcess = () => {
     },
   ];
 
+  calTotalSpendingAmount();
+
   spenBettingAmount1.textContent = "";
   spenBettingAmount2.textContent = "";
   spenBettingAmount3.textContent = "";
