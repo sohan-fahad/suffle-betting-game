@@ -44,6 +44,8 @@ let bettingAmountList = [
   },
 ];
 
+let windowScreen = document.documentElement;
+
 let bettingAmountBox1 = document.getElementById("amount-box-1");
 let bettingAmountBox2 = document.getElementById("amount-box-2");
 let bettingAmountBox3 = document.getElementById("amount-box-3");
@@ -83,10 +85,23 @@ let iconsArray = ["🍅", "🥕", "🍉", "🍍", "🥭", "🍒", "🌽", "🥥"
 let resultIconElemenst = iconsArray.map((element) => {
   return `<p class="result-icon">${element}</p>`;
 });
-
 resultsContainer.innerHTML = resultIconElemenst.join("\n");
 
 totalCoinBox.textContent = `available coin ${totalCoin}`;
+
+/* View in fullscreen */
+const openFullscreen = () => {
+  document.documentElement.requestFullscreen();
+  // if (windowScreen.requestFullscreen) {
+  //   windowScreen.requestFullscreen;
+  // } else if (windowScreen.webkitRequestFullscreen) {
+  //   /* Safari */
+  //   windowScreen.webkitRequestFullscreen();
+  // } else if (windowScreen.msRequestFullscreen) {
+  //   /* IE11 */
+  //   windowScreen.msRequestFullscreen();
+  // }
+};
 
 bettingAmountBox1.addEventListener("click", () => {
   bettingAmount1 = 10;
@@ -458,6 +473,10 @@ const handleCursorMovement = () => {
     }
   }, 2000);
 };
+
+document.addEventListener("click", () => {
+  openFullscreen();
+});
 
 startGameCountDown();
 handleCursorMovement();

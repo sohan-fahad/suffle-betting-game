@@ -133,6 +133,16 @@ body {
   font-size: 12px;
   overflow: hidden;
   cursor: pointer;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none !important;
+}
+
+.betting-item-box::shadow {
+  background-color: none;
 }
 
 .hover-box {
@@ -192,6 +202,9 @@ body {
   border-radius: 5px;
   background-color: #fff;
   cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .amount-box img {
@@ -290,5 +303,12 @@ body {
   .container {
     background-color: #e3ce34;
     width: 100%;
+  }
+
+  .betting-amount-wrapper {
+    width: 331px;
+  }
+  .amount-box img {
+    width: 50px;
   }
 }
