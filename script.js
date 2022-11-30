@@ -2,6 +2,7 @@ let totalCoin = 1000000;
 let leftTotalAmount = 0;
 let totalWiningCoin = 0;
 let isSuffleStart = true;
+let isModal = false;
 
 let bettingAmount1 = 0;
 let bettingAmount2 = 0;
@@ -475,8 +476,22 @@ const handleCursorMovement = () => {
 };
 
 document.addEventListener("click", () => {
-  openFullscreen();
+  // openFullscreen();
 });
+
+const showModal = () => {
+  isModal = true;
+  document.getElementById("modal-wrapper").style.height = "100vh";
+  document.getElementById("modal-box").classList.remove("modal-box");
+  document.getElementById("modal-box").classList.add("modal-box-active");
+};
+
+const closeModal = () => {
+  isModal = false;
+  document.getElementById("modal-wrapper").style.display = "none";
+  document.getElementById("modal-box").classList.add("modal-box");
+  document.getElementById("modal-box").classList.remove("modal-box-active");
+};
 
 startGameCountDown();
 handleCursorMovement();
